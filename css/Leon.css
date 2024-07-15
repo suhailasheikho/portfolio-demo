@@ -1,0 +1,448 @@
+/* start global  rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+
+    font-family: "Work Sans", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+.container {
+padding-left: 15px;
+padding-right: 15PX;
+margin-left: auto;
+margin-right: auto;
+
+}
+/* media for small screens*/
+@media (min-width: 768px) {
+.container{
+    width: 750px;
+}
+    
+}
+/* media for medium screens*/
+@media (min-width: 992) {
+    .container{
+        width: 970;
+    }
+        
+    }
+    /* media for large screens*/
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+        
+    }
+    /*end global rules*/
+
+    /*start header code*/
+    .header{
+        padding: 20px;
+    }
+    .header .container {
+        display: flex;   /*since logo and burger icon must be at same lin  */
+        justify-content: space-between;  /*tpo have space between the logo and the burger icon */
+        align-items: center;  /* items are at same line */
+    }
+  .logo {
+    width: 115px;
+    
+  }
+  .header .links{
+    position: relative;
+  }
+  .header .links .icon {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap; /*since i want to ,make burger icon then when content full it have new line*/
+    justify-content: flex-end;
+    
+  }
+  .header .links:hover .icon span:nth-child(2) {
+    /* when click on burger icon the second bar become full*/
+    width: 100%;
+  }
+  .header .links .icon span {
+    background-color: #9c9bf6;
+    margin-bottom: 5px;
+    height: 3px;
+  }
+  .header .links .icon span:first-child {
+       /*fisrt child means the first bar of burger icon */
+       width: 100%;
+       
+  }
+  .header .links .icon span:nth-child(2) {
+    /*fisrt child means the second bar of burger icon */
+    width: 60%;
+    transition: 0.3s;
+}
+.header .links .icon span:nth-child(3) {
+    /*fisrt child means the third bar of burger icon */
+    width: 100%;
+}
+ .header .links ul {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   background-color: #e5cffb;
+   position: absolute;
+   right: 0;
+   min-width: 200px;
+   top: calc(100% + 15px);/*since when start it must be at same line at top plus thew margin*/
+  display: none;
+ }
+ .header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #e5cffb transparent;/* to have the سهم style at the icon burger*/
+    position: absolute;
+    right: 5px;
+    top: -20px;
+
+ }
+ .header .links ul li  a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #460a80;
+    transition: 0.3s;
+ }
+ .header .links ul li  a:hover {
+    padding-left: 25px ;
+    border-bottom: 1px solid #19032f;
+ }
+ .header .links:hover ul {
+    display: block;
+ }
+    /*end header code*/
+
+    /*start features*/
+   .features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #B197FC;
+   }
+   .features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));/*we use autofill the columns according to area and start from 300 to 1fraction*/
+    grid-gap: 20px;
+
+
+   }
+.features .feat {
+  padding: 20px;
+  text-align: center;
+  color: #460a80;
+  font-size: 70px;
+}
+.features .feat i {
+  color: var(--main-color);
+}
+
+.features .feat h3 {
+font-weight: 800;
+margin: 30px 0;
+font-size: 23px;
+}
+.features .feat p {
+  line-height: 1.8;
+  font-size: 17px;
+
+}
+.specialheading {
+  color: #e0c6fa;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800px;
+  letter-spacing: -3px;
+  margin: 0;
+
+}
+
+.specialheading + p {
+  /*we use plus since it is the next selector*/
+  margin: -10px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: #460a80;
+}
+@media (max-width: 767px) {
+
+  .specialheading {
+    font-size:  60px;
+
+  }
+  .specialheading + p {
+    margin: -8 0 0 ;
+
+  }
+}
+
+    /*end features*/
+ /*start services*/
+ .services {
+  padding-top: 60px;
+    padding-bottom: 60px;
+ }
+ .services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+ }
+ .services .services-content .srv {
+  margin-bottom: 40px;
+  display: flex;
+ }
+
+@media (max-width: 767px) {
+
+  .services .services-content .srv {
+  text-align: center;
+  flex-direction: column;
+ }}
+ .services .services-content .srv  i {
+  color: var(--main-color);
+  flex-basis: 60px;/*we use it since in mobile mode it consider 60 as height and weigh*/
+}
+.services .services-content .srv  text {
+  flex: 1;
+}
+.services .services-content .srv .text h3 {
+  margin: 0 0 20px;
+  color: #460a80;
+}
+.services .services-content .srv .text  p {
+  color: #574491;
+    font-size: 17px;
+    
+}
+
+
+
+.specialheading {
+  color: #e0c6fa;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800px;
+  letter-spacing: -3px;
+  margin: 0;
+
+}
+
+.specialheading + p {
+  /*we use plus since it is the next selector*/
+  margin: -10px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: #460a80;
+}
+@media (max-width: 767px) {
+
+  .specialheading {
+    font-size:  60px;
+
+  }
+  .specialheading + p {
+    margin: -8 0 0 ;
+
+  }
+}
+
+    /*end features*/
+ /*start port*/
+ .portfolio {
+  padding-top: 40px;
+    padding-bottom: 60px;
+ }
+ .portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  
+ }
+ .portfolio .portfolio-content .card {
+  background-color: white;
+  margin-top: 100px;
+ }
+
+.portfolio .portfolio-content .card img  {
+  max-width: 100%;
+ }
+ .portfolio .portfolio-content .card .info {
+  padding: 20px;
+ }
+ .portfolio .portfolio-content .card .info  h3 {
+  margin: 0;
+  color: #460a80;
+ }
+ .portfolio .portfolio-content .card .info p {
+  color: #574491;
+  line-height: 1.6;
+  margin-bottom: 0;
+
+ }
+@media (max-width: 767px) {
+
+  .portfolio .portfolio-content .card {
+  text-align: center;
+  flex-direction: column;
+ }
+}
+
+   /*end portfolio*/
+   /*start about*/
+      .about {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+.about-content {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.about .about-content .image {
+  position: relative;
+  width:100px;
+  height: 150px;
+  margin-left: 70px;
+
+}
+.about .about-content .image::before{
+  content: "";
+  position:absolute;
+  background-color: #574491;
+  width: 40px;
+  height: calc(100% + 95px);
+  top: -40px;
+  left: -10px;
+  z-index: -1;
+  
+
+}
+
+   /*end about*/
+   .about .about-content .image  img{
+    max-width: 100%;
+   }
+   .about .about-content .text {
+    flex-basis: calc(100% - 300px);
+   }
+   .about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 40px;
+    color: #460a80;
+   }
+   .about .about-content .text hr {
+    width: 30%;
+    display: inline-block;
+    border-color:#9c9bf6;
+    margin-left: 250px;
+
+   }
+   .about .about-content .text p:last-of-type {
+    line-height: 2;
+    color:#460a80;
+    font-weight: bold;
+   }
+   @media(max-width: 990px){
+    .about .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+   }
+   @media(max-width: 990px){
+    .about .about-content .image::before{
+      display: none;
+
+    }
+
+  
+   }
+   @media(max-width: 990px){
+    .about .about-content .image {
+
+      margin: 0 auto 60px;
+   }
+  }
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+ 
+  }
+  .contact .info {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+
+  }
+  .contact .info  .label {
+        color: #460a80;
+        font-size: 30px;
+        font-weight: 800px;
+         letter-spacing: -2px;
+         margin-bottom: 15px;
+
+  }
+  .contact .info .link {
+    display: block;
+    font-size: 30px;
+    font-weight: 800px;
+    color: #574491;
+    text-decoration: none;
+
+  }
+  .contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 18px;
+    
+  }
+  .contact .info  .social i {
+    margin-left: 10px;
+    color: #574491;
+   
+  }
+  .contact .info .social{
+    color: #574491;
+    padding: 8px 0 8px 0;
+   
+  
+  }
+  @media (max-width: 767px) {
+    .contact .info  .label ,
+    .contact .info .link {
+      font-size: 30px;
+    }
+
+  }
+  /*start footer */
+  .footer {
+    background-color: #B197FC;
+    color: #574491;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800px;
+
+  }
+  .footer span {
+    font-weight: bold;
+   color: #19032f;
+   font-weight: 800px;
+  }

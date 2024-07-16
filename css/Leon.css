@@ -22,7 +22,7 @@ margin-right: auto;
 /* media for small screens*/
 @media (min-width: 768px) {
 .container{
-    width: 750px;
+    width: 900px;
 }
     
 }
